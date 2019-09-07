@@ -77,9 +77,9 @@
 
     <Button
         android:id="@+id/save"
-        android:layout_width="77dp"
+        android:layout_width="60dp"
         android:layout_height="38dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="saveStudent"
@@ -94,7 +94,7 @@
 
     <Button
         android:id="@+id/show"
-        android:layout_width="77dp"
+        android:layout_width="60dp"
         android:layout_height="38dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -105,7 +105,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/save"
         app:layout_constraintTop_toBottomOf="@+id/number"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0.019"
         tools:text="Show" />
 
     <Button
@@ -122,10 +122,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0.019"
         tools:text="Update" />
 
     <Button
@@ -141,9 +141,27 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0.019"
         tools:text="Delete" />
+
+    <Button
+        android:id="@+id/all"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Select All"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number"
+        app:layout_constraintVertical_bias="0.019" />
 </android.support.constraint.ConstraintLayout>

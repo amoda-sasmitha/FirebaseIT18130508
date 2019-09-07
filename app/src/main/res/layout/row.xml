@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="#f4f4f4"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
 
+    <TextView
+        android:id="@+id/idx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d8d8d8"
+        android:text="IT18130508"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/namex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:text="Amoda Sasmitha"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/addressx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address goes here"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </LinearLayout>

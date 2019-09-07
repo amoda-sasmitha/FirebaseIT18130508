@@ -3,6 +3,8 @@ package com.example.student.firebaseit18130508;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -15,12 +17,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class firebase extends AppCompatActivity {
 
     EditText id, name , address , contactNo;
     Button save, show, update , delete;
     Student std;
     DatabaseReference dbref;
+    RecyclerView rv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,11 @@ public class firebase extends AppCompatActivity {
         show = findViewById(R.id.show);
         update = findViewById(R.id.update);
         delete = findViewById(R.id.delete);
+        rv = findViewById(R.id.recycleView);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+
+
+
 
         std = new Student();
 
@@ -156,5 +166,36 @@ public class firebase extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void selectAll( View view){
+        Toast.makeText(getApplicationContext(), " Loading..", Toast.LENGTH_LONG).show();
+        DatabaseReference allref = FirebaseDatabase.getInstance().getReference().child("Student");
+        allref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if( dataSnapshot.hasChildren()){
+
+                    ArrayList<Student> array = new ArrayList<>();
+                    for (DataSnapshot child: dataSnapshot.getChildren()) {
+                        Student st = new Student();
+                        st.setId( child.child("id").getValue().toString() );
+                        st.setName( child.child("name").getValue().toString());
+                        st.setAddress( child.child("address").getValue().toString());
+                        array.add(st);
+                    }
+
+                    StudentAdapter adapter = new StudentAdapter(array);
+                    rv.setAdapter(adapter);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 }
